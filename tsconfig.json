@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@mocks/*": ["mocks/*"]
+        },
+        "target": "ES2015",
+        "module": "CommonJS",
+        "strict": true,
+    }
+}

@@ -1,2 +1,0 @@
-# reservation-management-system
-スプレッドシートを利用した予実管理システムのリポジトリ
