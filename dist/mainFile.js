@@ -8,8 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SPREADSHEET_ID = exports.SERVICE_ACCOUNT_FILE = void 0;
+exports.getSpreadsheetData = exports.SPREADSHEET_ID = exports.SERVICE_ACCOUNT_FILE = void 0;
 // 外部モジュール
 const googleapis_1 = require("googleapis");
 const google_auth_library_1 = require("google-auth-library");
@@ -18,9 +19,9 @@ require("dotenv/config");
 // 自作ファイルからのインポート
 const getSheetInfo_1 = require("./getSheetInfo");
 // サービスアカウントの秘密鍵ファイルパス
-exports.SERVICE_ACCOUNT_FILE = "./spreadsheetcustomize-0977adcda7df.json";
+exports.SERVICE_ACCOUNT_FILE = (_a = process.env.JSON_FILE_PATH) !== null && _a !== void 0 ? _a : "";
 // スプレッドシートIDと範囲
-exports.SPREADSHEET_ID = process.env.RESERVATION_FILE_ID;
+exports.SPREADSHEET_ID = (_b = process.env.RESERVATION_FILE_ID) !== null && _b !== void 0 ? _b : "";
 function getSpreadsheetData() {
     return __awaiter(this, void 0, void 0, function* () {
         const targetSheets = yield (0, getSheetInfo_1.getTargetSheets)();
@@ -61,4 +62,4 @@ function getSpreadsheetData() {
         }
     });
 }
-getSpreadsheetData();
+exports.getSpreadsheetData = getSpreadsheetData;
